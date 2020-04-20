@@ -31,7 +31,7 @@ _\* stands for Humongous Database._
 
 - Stores data together in a document
 - Gives us lots of flexibility
-- Allows you to get started before the exact bd requirements are known.
+- Allows you to get started before the exact DB requirements are known.
 - Ability to adapt and improve later.
 
 ---
