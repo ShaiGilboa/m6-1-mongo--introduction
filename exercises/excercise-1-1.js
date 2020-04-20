@@ -1,28 +1,25 @@
-'use strict';
-
 const { MongoClient } = require('mongodb');
 
-const dbFunction = async (dbName, collection, item) => {
+const dbFunction = async (dbName) => {
   try {
-  // create a new client
+
   const client = new MongoClient('mongodb://localhost:27017', {
     useUnifiedTopology: true,
   });
 
-  // open the connection to the database server
   await client.connect();
   console.log('connected!');
 
   const db = client.db(dbName);
-  await db.collection(collection).insertOne(item);
 
-  // close the connection to the database server
+  await db.collection('one').insertOne({ name: 'Buck asdasdsdsd' });
+
   client.close();
   console.log('disconnected!');
-
   } catch (err) {
     console.log('err',err)
   }
-};
+  
+}
 
-dbFunction('exercises', 'one', { name: 'Buck Rogers' });
+dbFunction('exercise_one');
