@@ -11,6 +11,7 @@ const {
   getGreeting,
   findMoreThenOne,
   deleteGreeting,
+  updateGreeting,
   } = require('./craig')
 
 const PORT = process.env.PORT || 8000;
@@ -32,6 +33,7 @@ express()
   .get('/ex-2/greeting/:_id',getGreeting)
   .get('/ex-2/greetings', findMoreThenOne)
   .delete('/ex-2/deleteGreeting/:_id', deleteGreeting)
+  .put('/ex-2/updateGreeting/:_id',updateGreeting)
   // handle 404s
   .use((req, res) => res.status(404).type('txt').send('🤷‍♂️'))
 
